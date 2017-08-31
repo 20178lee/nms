@@ -1,0 +1,11 @@
+[2017-08-28 22:07:41.283] [ERROR] console - (node:6496) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+[2017-08-28 22:13:10.345] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:13:16.157] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:13:23.493] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:14:32.590] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:16:34.356] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:16:39.935] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:16:45.585] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:16:51.022] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:16:58.154] [ERROR] access - PUT /api/account/sign-in
+[2017-08-28 22:17:21.868] [ERROR] access - PUT /api/account/sign-in
