@@ -1,15 +1,5 @@
 # NoderCMS - 轻量级内容管理系统
 
-NoderCMS 使用 Node.js + MongoDB 开发，拥有灵活的内容模型以及完善的权限角色机制。
-
-[官方网站](http://www.nodercms.com) | [帮助中心](http://www.nodercms.com/help) | QQ群：369888346
-
-## 演示
-- 地址：[http://demo.nodercms.com](http://demo.nodercms.com)
-- 后台：[http://demo.nodercms.com/admin](http://demo.nodercms.com/admin)
-- 账号：ghost@nodercms.com
-- 密码：123456
-
 ## 安装
 
 ```bash
