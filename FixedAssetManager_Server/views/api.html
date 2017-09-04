@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>home</title>
+    </head>
+
+    <body>
+        <div id="main_div" class="panel panel-default">
+            <p>service list</p>
+             <div class="panel-heading">service list</div>
+            <p>
+                <table class="table">
+                    <tr>
+                        <th>service name</th>
+                        <th>HTTP method</th>
+                        <th>request params</th>
+                        <th>available</th>
+                        <th>test</th>
+                    </tr>
+                    <tr>
+                        <td><strong>/user/:userId(updated)</strong></td>
+                        <td>GET</td>
+                        <td>
+                            <li>userId</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/inspection(updated)</strong></td>
+                        <td>POST</td>
+                        <td>
+                            <li>qrCode</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/:faId/info(updated)</strong></td>
+                        <td>GET</td>
+                        <td>
+                            <li>faId</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/:faId/detail(delete)</td>
+                        <td>GET</td>
+                        <td>
+                            <li>faId</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/user/:userId/fixedassets(updated)</strong></td>
+                        <td>GET</td>
+                        <td>
+                            <li>userId</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/rejection(updated)</strong></td>
+                        <td>POST</td>
+                        <td>
+                            <li>faId</li>
+                            <li>reject:0/1</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/insertion(updated)</strong></td>
+                        <td>POST</td>
+                        <td>
+                            <li>inserting obj</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/:faId/modification(updated)</strong></td>
+                        <td>POST</td>
+                        <td>
+                            <li>inserting obj</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>/fixedasset/:faId/allocation(updated)</strong></td>
+                        <td>POST</td>
+                        <td>
+                            <li>faId</li>
+                            <li>userId</li>
+                            <li>deptId</li>
+                        </td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fatypes</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/departments</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/:faId/existence</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/:faId/history</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/department/:deptId/idelfixedasset/type/:typeId/page/:pageIndex?</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/companies</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/conditionInfo</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/retrieve</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/fixedasset/:faId/recycle</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/giftcategories</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/giftcategory/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/giftcategory/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/gifts</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/gift/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/gift/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/gift/deletion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockintypes</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockintype/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockintype/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/paymenttypes</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/paymenttype/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/paymenttype/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockins</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockin/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockin/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockin/deletion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockouts</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockout/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockout/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockout/deletion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/limitations</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/limitation/insertion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/limitation/modification</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/limitation/deletion</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/inventories</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/manualinputdepts</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/suppliers</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockin/import</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/stockin/export</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                    <tr>
+                        <td>/signup</td>
+                        <td>POST</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+
+    </body>
+</html>

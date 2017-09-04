@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name='description' content='<%= config.description %>'>
+    <%
+      var headers = config.site_headers || [];
+      for (var i = 0, l = headers.length; i < l; i++) {
+      %>
+    <%- headers[i] %>
+    <%  } %>
+    <!-- style -->
+    <link href="/public/stylesheets/login.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/login.css" rel="stylesheet" type="text/css" />
+
+    <!-- script -->
+    <script type="text/javascript" src="/public/libs/js/login.min.js"></script>
+    <script type="text/javascript" src="/public/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/public/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/libs/CryptoJS_v3.1.2/rollups/sha256.js"></script>
+    <script type="text/javascript" src="/public/libs/js/login.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <form id="signinForm" class="form-signin" onsubmit="return postAuthUserForm();">
+        <h2 class="form-signin-heading">金智教育资产管理系统</h2>
+        <input id="input_userId" type="text" class="form-control" placeholder="用户名" required autofocus>
+        <input id="input_pwd" type="password" class="form-control" placeholder="密 码" required>
+        <!-- input id="input_captchaCode" type="text" class="form-control" placeholder="验证码" required>
+        <div id="captcha_div"-->
+        </div>
+        <button id="submitBtn" class="btn btn-lg btn-primary btn-block margin-topForLoginBtn" type="submit" >登 录</button>
+        <div id="div_tip" class="alert alert-danger fade in margin-topForTipDiv">
+          <span id="span_tipMsg"></span>
+        </div>
+      </form>
+    </div>
+    <!-- /container -->
+  </body>
+</html>

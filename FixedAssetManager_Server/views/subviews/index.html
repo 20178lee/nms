@@ -1,0 +1,142 @@
+<% layout('layout') -%>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("li[class='active']").removeAttr("class");
+        $("#home").addClass("active");
+    });
+</script>
+ <div id="main_div" class="panel panel-default">
+             <div class="panel-heading">service list</div>
+            <p>
+                <table class="table">
+                <tr>
+                    <th>service name</th>
+                    <th>HTTP method</th>
+                    <th>request params</th>
+                    <th>available</th>
+                    <th>test</th>
+                </tr>
+                <tr>
+                    <td><strong>/user/:userId(updated)</strong></td>
+                    <td>GET</td>
+                    <td>
+                        <li>userId</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/inspection(updated)</strong></td>
+                    <td>POST</td>
+                    <td>
+                        <li>qrCode</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/:faId/info(updated)</strong></td>
+                    <td>GET</td>
+                    <td>
+                        <li>faId</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td>/fixedasset/:faId/detail(delete)</td>
+                    <td>GET</td>
+                    <td>
+                        <li>faId</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/user/:userId/fixedassets(updated)</strong></td>
+                    <td>GET</td>
+                    <td>
+                        <li>userId</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/rejection(updated)</strong></td>
+                    <td>POST</td>
+                    <td>
+                        <li>faId</li>
+                        <li>reject:0/1</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/insertion(updated)</strong></td>
+                    <td>POST</td>
+                    <td>
+                        <li>inserting obj</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/:faId/modification(updated)</strong></td>
+                    <td>POST</td>
+                    <td>
+                        <li>inserting obj</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td><strong>/fixedasset/:faId/allocation(updated)</strong></td>
+                    <td>POST</td>
+                    <td>
+                        <li>faId</li>
+                        <li>userId</li>
+                        <li>deptId</li>
+                    </td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td>/fatypes</td>
+                    <td>GET</td>
+                    <td></td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td>/departments</td>
+                    <td>GET</td>
+                    <td></td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                    <td>/fixedasset/:faId/existence</td>
+                    <td>GET</td>
+                    <td></td>
+                    <td>yes</td>
+                    <td><a href="#">test</a></td>
+                </tr>
+                <tr>
+                        <td>/fixedasset/:faId/history</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>/department/:deptId/idelfixedasset/:pageIndex?</td>
+                        <td>GET</td>
+                        <td></td>
+                        <td>yes</td>
+                        <td><a href="#">test</a></td>
+                    </tr>
+            </table>
+        </p>
+    </div>
+

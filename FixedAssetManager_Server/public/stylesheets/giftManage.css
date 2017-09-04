@@ -1,0 +1,22 @@
+#brand,
+#editBrand,
+#giftName,
+#editGiftName,
+#giftUnit,
+#editGiftUnit,
+#giftPrice,
+#editGiftPrice,
+#editGiftExpireDate,
+#giftCategoryName,
+#giftExpireDate{
+	width:150px;
+}
+#outOpearte,
+#inOpearte{
+	margin-left:20px;
+	margin-bottom:10px;
+}
+.lable1{
+	margin-left:20px;
+	margin-right:20px;
+}

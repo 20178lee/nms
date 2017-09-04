@@ -1,0 +1,96 @@
+<% layout('layout') -%>
+<head>
+  <!-- script -->
+  <%- Loader("/public/libs/js/printservice.min.js")
+  .js("/public/libs/js/bootstrap-datepicker.js")
+  .js("/public/libs/js/print.js")
+  .js("/public/libs/js/bootbox.min.js")
+  .done(assets)
+  %>
+    <!-- style -->
+  <%- Loader("/public/stylesheets/printservice.min.css")
+  .css("/public/stylesheets/print.css")
+  .css("/public/stylesheets/datepicker.css")
+  .done(assets)
+  %>
+</head>
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+    $("li[class='active']").removeAttr("class");
+    $("#print").addClass("active");
+    if(<%= locals.renderData.total %> >50){
+      $('#paginator_div').pagination({
+        items: <%= locals.renderData.total %>,
+        itemsOnPage: <%= locals.renderData.pageSize %>,
+        currentPage:<%= locals.renderData.pageIndex %>,
+        cssStyle: 'light-theme',
+        onPageClick: function(pageNum){
+          var dURL = document.URL;
+          if(dURL.indexOf("0000")!=-1){
+              var d1 = dURL.split('/')[6],
+                  d2 = dURL.split('/')[7];
+              window.location.href="/fixedasset/printservice/"+pageNum+"/"+d1+"/"+d2;
+          }else{
+              window.location.href="/fixedasset/printservice/"+pageNum;
+          }
+          
+        }
+      });
+    }
+
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+     
+    var checkin = $('#dpd1').datepicker().on('changeDate', function(ev) {
+      if (ev.date.valueOf() > checkout.date.valueOf()) {
+        var newDate = new Date(ev.date)
+        newDate.setDate(newDate.getDate() + 1);
+        checkout.setValue(newDate);
+      }
+      checkin.hide();
+      $('#dpd2')[0].focus();
+    }).data('datepicker');
+    var checkout = $('#dpd2').datepicker().on('changeDate', function(ev) {
+      checkout.hide();
+    }).data('datepicker');
+
+  });
+      
+</script>
+<div >
+  <h1>打印二维码</h1>
+  <div class="pagination_print">
+    <div id='paginator_div' style="float:left;padding-top:10px" ></div>
+    <div style="float:right">
+      选择时间：
+      <input id="dpd1"class="datePicker1" size="16" type="text" value="12-13-2013" readonly="">
+      -
+      <input id="dpd2"class="datePicker1" size="16" type="text" value="12-13-2013" readonly="">
+       <button type="button" class="btn btn-default" onclick="btnResearch()">
+        <span class="glyphicon glyphicon-search"></span> 查询
+      </button>      <button type="button" class="btn btn-default" onclick="btnPrintClick()">
+        <span class="glyphicon glyphicon-print"></span> 打印
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="div_items_list">
+  <%
+  if (locals.renderData.qrCodeList) {
+    for (var i = 0; i < locals.renderData.qrCodeList.length; i++) {
+      %>
+      
+      <div class="item_qrcode">
+        <img src="
+        http://qr.liantu.com/api.php?w=180&m=10&text=<%= locals.renderData.qrCodeList[i].newId %>"/>
+        <div><%= locals.renderData.qrCodeList[i].typeName %>:<%= locals.renderData.qrCodeList[i].newId %></div>
+      </div>
+      
+      <%
+    }
+  }
+  %>
+  
+</div>

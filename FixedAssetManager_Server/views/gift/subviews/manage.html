@@ -1,0 +1,204 @@
+<% layout('gift/layout') -%>
+<head>
+    <!-- script -->
+    <script type="text/javascript" src="/public/libs/js/giftManage.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/giftManage.js"></script>
+    
+    <!-- style -->
+    <link href="/public/stylesheets/giftManage.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/giftManage.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/bootstrap-select.css" rel="stylesheet" type="text/css" />
+     <link href="/public/stylesheets/datepicker.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#w_nav>li[class='active']").removeAttr("class");
+        $("#manage").addClass("active");
+        // $('#giftExpireDate').datepicker({
+        //     format: 'yyyy-mm-dd',
+        //     startDate: '-3d'
+        // })
+        var checkin = $('#giftExpireDate').datepicker({
+            format: 'yyyy-mm-dd'
+        }).on('changeDate', function(ev) {
+            checkin.hide();
+        }).data('datepicker');
+
+        var checkinEdit = $('#editGiftExpireDate').datepicker({
+            format: 'yyyy-mm-dd'
+        }).on('changeDate', function(ev) {
+            checkinEdit.hide();
+        }).data('datepicker');
+        loadGiftCategorysIndex();
+        loadGifts();
+        loadGiftCategorys();
+        $('#giftCategoryBtnEdit').hide();
+    });
+        
+    
+
+
+</script>
+<div id="main_div" class="panel">
+ <div class="row-fluid">
+    <div class="span12">
+        <div class="tabbable" id="tabs-410411">
+            <h1>礼品管理</h1>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#panel-1" data-toggle="tab">礼品管理</a>
+                </li>
+                <li>
+                    <a href="#panel-3" data-toggle="tab">礼品类别管理</a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active fade in" id="panel-1">
+                    <form class= "giftInOpear form-inline"  role="form">
+                        <div>
+                            <div class="form-group">
+                                <legend>礼品管理</legend>
+                                <div class="input-group " >
+                                    <!-- <label class="lable1">品牌 :</label> --><input  class="form-control " type="text" id="brand" name = "brand" style="display:none;">
+                                    <label class="lable1">名&nbsp;&nbsp;&nbsp;&nbsp;称 :</label><input  class="form-control" type="text" id="giftName" name="name">
+                                    <label class="lable1">计量单位 :</label><input  class="form-control" type="text" id="giftUnit" name="unit">
+                                    <label class="lable1">单价 :</label><input  class="form-control"  id="giftPrice" name="price" type="number"  min="0" data-bind="value:giftPrice">
+                                </div><p>
+                                <div class="input-group" >
+                                   
+                                    <label class="lable1">有效期 :</label>
+                                    <input type="text" class="form-control" data-date-format="yyyy-mm-dd" value="" id="giftExpireDate" name="expireDate">
+                                    <label class="lable1">礼品类别 :</label>
+                                    <select  id="giftCategory" name="categoryId"  class="selectpicker show-tick" style="margin-left:20px;">
+                                        <option value="0">-- 请选择礼品类别 --</option>
+                                    </select>
+
+                                    <button type="button" class="btn btn-primary" style="margin-left:10px" id="giftIn" onclick="giftInOpearteClick()">确定录入</button>
+                                </div><p>
+                                <div class="input-group" >
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="underName">
+                            <div class="panel-heading" >现有礼品</div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <!-- <th>品牌</th>-->
+                                        <th>单位</th>
+                                        <th>单价</th>
+                                        <th>类别</th>
+                                        <th>有效期</th>
+                                        <th>修改</th>
+                                        <th>删除</th>
+                                    </tr>
+                                </thead>
+                                <tbody id='addtr'>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="tab-pane" id="panel-3">
+                    <legend>礼品类别管理</legend> 
+                    <div class="controls controls-row" >
+                        <form class="gitCategoryForm">
+                            <div class="row-fluid btn-group btn-group-justified">
+                                <div class="input-group " style="margin-bottom:10px;">
+                                <label class="lable1">请输入礼品类别 :</label><input  class="form-control " type="text" id="giftCategoryName" >
+                                <button  type="button" id="giftCategoryBtn"  onclick="addGiftCategory()" style="width:100px;margin-left:20px; " class="btn btn-default" >
+                                    添加
+                                </button>
+                                <button  type="button" id="giftCategoryBtnEdit" style="width:100px;margin-left:20px; " class="btn btn-default" >
+                                    修改
+                                </button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="panel panel-default" id="dataSearchView" >
+
+                            <div class="panel-heading" id = "viewTitle">现有礼品类别</div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>类别名</th>
+                                        <th>修改</th>
+                                        <!-- <th>删除</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody id='giftCategoryAttr'>
+
+                                </tbody>
+                            </table>
+                            <div id='viewPaginator' style="float:left;padding-top:10px" ></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>            
+<!-- Modal -->
+<div class="modal fade" id="gitEditModle" tabindex="-1" role="dialog" aria-labelledby="gitEditModleLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">礼品修改</h4>
+            </div>
+            <div class="modal-body" id="userInfoDetails">
+                <form class= "editGiftInOpear form-inline"  role="form">
+                    <div>
+                        <div class="form-group">
+                            <input  class="form-control" style="display:none" type="text" id="editGiftId" name = "giftId">
+                            <div class="input-group " >
+                                <!-- <label class="lable1">品&nbsp;&nbsp;&nbsp;&nbsp;牌 :</label> --><input  class="form-control" type="text" id="editBrand" name = "brand" style="display:none;">
+                                <label class="lable1">名&nbsp;&nbsp;&nbsp;&nbsp;称 :</label><input  class="form-control" type="text" id="editGiftName" name="name">
+                                 <label class="lable1">单&nbsp;&nbsp;&nbsp;&nbsp;位 :</label><input  class="form-control" type="text" id="editGiftUnit" name="unit">
+                            </div><p>
+                            <div class="input-group " >
+                                <label class="lable1">单&nbsp;&nbsp;&nbsp;&nbsp;价 :</label><input  class="form-control"  id="editGiftPrice" name="price" type="number"  min="0" data-bind="value:editGiftPrice">
+                                <label class="lable1">有效期 :</label>
+                                <input type="text" class="form-control" data-date-format="yyyy-mm-dd" value="" id="editGiftExpireDate" name="expireDate">
+                            </div><p>
+                            <div class="input-group" >
+                                
+                                <label class="lable1">类&nbsp;&nbsp;&nbsp;&nbsp;别 :</label>
+                                <select  id="giftCategoryEdit" name="categoryId" data-width="150px"  class="selectpicker show-tick" style="margin-left:20px;">
+                                    <option value="0">-- 请选择礼品类别 --</option>
+                                </select>
+                                 <button type="button" class="btn btn-primary" style="margin-left:10px" id="giftIn" onclick="giftEditOpearteClick()">确定修改</button>
+
+                               
+                            </div><p>
+                            <div class="input-group" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+</div>
+
