@@ -1,17 +1,15 @@
 <% layout('layout') -%>
 <head>
 	<!-- script -->
-	<%- Loader("/public/libs/js/batchCreate.min.js")
-	.js("/public/libs/js/bootstrap-select.js")
-	.js("/public/libs/js/batchCreate.js")
-	.js("/public/libs/js/ajaxupload.js")
-	.done(assets)
-	%>
+	    <script type="text/javascript" src="/public/libs/js/batchCreate.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/public/libs/js/batchCreate.js"></script>
+    <script type="text/javascript" src="/public/libs/js/ajaxupload.js"></script>
+
 		<!-- style -->
-	<%- Loader("/public/stylesheets/batchCreate.min.css")
-	.css("/public/stylesheets/bootstrap-select.css")
-	.done(assets)
-	%>
+	<link href="/public/stylesheets/batchCreate.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/bootstrap-select.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <script type="text/javascript">

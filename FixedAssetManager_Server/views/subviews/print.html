@@ -1,18 +1,16 @@
 <% layout('layout') -%>
 <head>
   <!-- script -->
-  <%- Loader("/public/libs/js/printservice.min.js")
-  .js("/public/libs/js/bootstrap-datepicker.js")
-  .js("/public/libs/js/print.js")
-  .js("/public/libs/js/bootbox.min.js")
-  .done(assets)
-  %>
+  	    <script type="text/javascript" src="/public/libs/js/printservice.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/public/libs/js/print.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootbox.min.js"></script>
+
     <!-- style -->
-  <%- Loader("/public/stylesheets/printservice.min.css")
-  .css("/public/stylesheets/print.css")
-  .css("/public/stylesheets/datepicker.css")
-  .done(assets)
-  %>
+       <link href="/public/stylesheets/printservice.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/print.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/datepicker.css" rel="stylesheet" type="text/css" />
+
 </head>
 <script type="text/javascript">
   $(document).ready(function(){

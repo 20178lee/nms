@@ -1,18 +1,16 @@
 <% layout('gift/layout') -%>
 <head>
     <!-- script -->
-    <%- Loader("/public/libs/js/giftStorage.min.js")
-    .js("/public/libs/js/bootstrap-select.js")
-    .js("/public/libs/js/bootbox.min.js")
-    .js("/public/libs/js/storage.js")
-    .done(assets)
-    %>
+    <script type="text/javascript" src="/public/libs/js/giftStorage.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/public/libs/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="/public/libs/js/storage.js"></script>
+
     <!-- style -->
-    <%- Loader("/public/stylesheets/giftStorage.min.css")
-    .css("/public/stylesheets/storage.css")
-    .css("/public/stylesheets/bootstrap-select.css")
-    .done(assets)
-    %>
+    <link href="/public/stylesheets/giftStorage.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/storage.css" rel="stylesheet" type="text/css" />
+    <link href="/public/stylesheets/bootstrap-select.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <script type="text/javascript">
